@@ -80,7 +80,7 @@ struct FullCommand: ParsableCommand {
 
     private func repositoryURL() -> URL? {
         if let urlString = try? self.git.findRespoitoryOriginURL()?.absoluteString {
-            return URL(string: urlString.replacingOccurrences(of: ":", with: "/").replacingOccurrences(of: "git@", with: "https://"))
+            return URL(string: urlString)
         } else {
             return nil
         }
